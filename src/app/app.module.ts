@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderLogoComponent } from './shared/components/header-logo/header-logo.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     SharedModule,
     PagesModule
   ],

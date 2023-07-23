@@ -1,0 +1,41 @@
+<!-- <div class="main-border-y-color sticky top-0">
+    <div class="flex justify-between items-center">
+        <app-header-logo></app-header-logo>
+    </div>
+</div> -->
+
+<div class="flex flex-col items-center mt-10 px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div class="w-full bg-white rounded-lg shadow-lg md:mt-0 sm:max-w-md xl:p-0">
+        <img class="w-[200px] m-auto mt-10" src="assets/tahakomLogo.png" alt="logo">        
+        <h1 class="text-center main-text-color text-2xl mt-5">Welcome to Tahakom EMS</h1>
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1 class="text-xl leading-tight tracking-tight main-text-color md:text-2xl">
+                Login to your account
+            </h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4 md:space-y-6" >
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium main-text-color ">Your email</label>
+                    <input formControlName="email" type="email" required class="bg-gray-50 main-border-color text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5" placeholder="name@company.com">
+                    <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+                        <span class="text-red-700" *ngIf="loginForm.controls.email.errors.required">Email Required</span>
+                        <span class="text-red-700" *ngIf="loginForm.controls.email.errors.pattern">Invalid Email</span>
+                    </div>
+                </div>
+                <div class="relative">   
+                    <label for="password" class="block mb-2 text-sm font-medium main-text-color">Password</label>
+                    <input formControlName="password" required [type]="showPassword?'text' :'password'" name="password" id="password" placeholder="••••••••" class="bg-gray-50  main-border-color text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5">     
+                    <i (click)="toggleShow()" *ngIf="showPassword" class="fa-solid fa-eye absolute bottom-[12px] right-[10px]"></i>
+                    <i (click)="toggleShow()" *ngIf="!showPassword" class="fa-solid fa-eye-slash absolute bottom-[12px] right-[10px]"></i>
+                </div>
+                <div class="inline" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+                    <span class="text-red-700" *ngIf="loginForm.controls.password.errors.required">Password Required</span>
+                    <span class="text-red-700" *ngIf="loginForm.controls.password.errors.pattern">Please enter at least 8 characters (including one letter and one number at least)</span>
+                </div>
+                <button type="submit" class="w-full text-white bg-gray-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center" [ngClass]="{'main-hover-color main-bg-color': loginForm.valid && loginForm.dirty}" [disabled]="!(loginForm.valid && loginForm.dirty)">Log in</button>
+                <p class="text-sm font-light text-gray-500">
+                    Don’t have an account yet? <a routerLink="/SignUp" class="font-medium main-text-color hover:underline">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

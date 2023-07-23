@@ -2,19 +2,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { AfterDnsComponent } from './components/after-dns/after-dns.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { RouterLink, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    AfterDnsComponent
+    AfterDnsComponent,
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports:[
-    AfterDnsComponent
+    AfterDnsComponent,
+    SignUpComponent,
+    LogInComponent
   ]
 })
 export class PagesModule { }

@@ -2,3 +2,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main-bg-color{
+    background-color: rgb(89, 28, 60);
+}
+
+.main-hover-color:hover{
+    background: rgb(40, 16, 40);
+}
+
+.main-border-color{
+    border: 1px solid rgb(89, 28, 60);
+}
+.main-border-y-color{
+    border-bottom: 1px solid rgb(89, 28, 60);
+}
+.main-text-color{
+    color:  rgb(89, 28, 60);
+}
+
